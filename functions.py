@@ -1,2 +1,5 @@
-def proceed_release(body, chat_id):
-    print(body, chat_id)
+from hashlib import sha256
+
+
+def get_hash(value):
+    return sha256(value.encode('utf-8')).hexdigest()
