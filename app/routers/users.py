@@ -1,6 +1,4 @@
-from fastapi import APIRouter, Depends
-
-from app.dependencies import get_token_header
+from fastapi import APIRouter
 
 from starlette import status
 from starlette.responses import JSONResponse
@@ -10,7 +8,6 @@ from app.schemes import User
 router = APIRouter(
     prefix='/user',
     tags=['user'],
-    dependencies=[Depends(get_token_header)],
     responses={404: {'descriptions': 'Not Found'}},
 )
 
