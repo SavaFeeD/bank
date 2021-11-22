@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends
 
-from app.dependencies import get_token_header, get_query_token
+from app.dependencies import get_token_header
 from app.internal import admin
 from app.routers import banks, users
 
-app = FastAPI(dependencies=[Depends(get_query_token)])
+app = FastAPI()
 
 app.include_router(users.router)
 app.include_router(banks.router)
