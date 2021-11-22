@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, HttpUrl
 from enum import Enum
+from fastapi import Query
 
 
 class BankName(str, Enum):
@@ -15,7 +16,7 @@ class Banks(BaseModel):
 
 
 class User(BaseModel):
-    login: str
+    email: str
     password: str
     name: str
     description: Optional[str] = None
